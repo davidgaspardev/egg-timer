@@ -20,6 +20,7 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.core.app.NotificationCompat
 import com.example.android.eggtimernotifications.MainActivity
@@ -52,9 +53,10 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
     )
     val bigPicStyle = NotificationCompat.BigPictureStyle()
         .bigPicture(eggImage)
+        .bigLargeIcon(null as Bitmap?)
 
     // Build the notification
-    val builder = NotificationCompat.Builder(
+    val notification = NotificationCompat.Builder(
         applicationContext,
         applicationContext.getString(R.string.egg_notification_channel_id)
     )
@@ -66,9 +68,10 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
         .setAutoCancel(true)
         .setStyle(bigPicStyle)
         .setLargeIcon(eggImage)
+        .build()
 
     // Deliver the notification
-    notify(NOTIFICATION_ID, builder.build())
+    notify(NOTIFICATION_ID, notification)
 }
 
 // TODO: Step 1.14 Cancel all notifications
