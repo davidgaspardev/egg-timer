@@ -30,7 +30,7 @@ import com.example.android.eggtimernotifications.receiver.SnoozeReceiver
 // Notification ID.
 private val NOTIFICATION_ID = 0
 private val REQUEST_CODE = 0
-private val FLAGS = 0
+private val FLAGS = PendingIntent.FLAG_ONE_SHOT
 
 // TODO: Step 1.1 extension function to send messages (GIVEN)
 /**
@@ -45,6 +45,14 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
         NOTIFICATION_ID,
         contentIntent,
         PendingIntent.FLAG_UPDATE_CURRENT
+    )
+
+    val snoozeIntent = Intent(applicationContext, SnoozeReceiver::class.java)
+    val snoozePendingIntent = PendingIntent.getBroadcast(
+        applicationContext,
+        REQUEST_CODE,
+        snoozeIntent,
+        FLAGS
     )
 
     val eggImage = BitmapFactory.decodeResource(
@@ -68,6 +76,11 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
         .setAutoCancel(true)
         .setStyle(bigPicStyle)
         .setLargeIcon(eggImage)
+        .addAction(
+            R.drawable.egg_icon,
+            applicationContext.getString(R.string.snooze),
+            snoozePendingIntent
+        )
         .build()
 
     // Deliver the notification
