@@ -14,7 +14,7 @@
  * limitations under the License.
  */
  
-package com.example.android.eggtimernotifications.ui
+package dev.davidgaspar.eggtimernotifications.ui
 
 import android.app.*
 import android.content.Context
@@ -24,10 +24,10 @@ import android.os.SystemClock
 import androidx.core.app.AlarmManagerCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.*
-import com.example.android.eggtimernotifications.receiver.AlarmReceiver
-import com.example.android.eggtimernotifications.R
-import com.example.android.eggtimernotifications.util.cancelNotifications
-import com.example.android.eggtimernotifications.util.sendNotification
+import dev.davidgaspar.eggtimernotifications.receiver.AlarmReceiver
+import dev.davidgaspar.eggtimernotifications.R
+import dev.davidgaspar.eggtimernotifications.util.cancelNotifications
+import dev.davidgaspar.eggtimernotifications.util.sendNotification
 import kotlinx.coroutines.*
 
 class EggTimerViewModel(private val app: Application) : AndroidViewModel(app) {
@@ -43,7 +43,7 @@ class EggTimerViewModel(private val app: Application) : AndroidViewModel(app) {
 
     private val alarmManager = app.getSystemService(Context.ALARM_SERVICE) as AlarmManager
     private var prefs =
-        app.getSharedPreferences("com.example.android.eggtimernotifications", Context.MODE_PRIVATE)
+        app.getSharedPreferences("dev.davidgaspar.eggtimernotifications", Context.MODE_PRIVATE)
     private val notifyIntent = Intent(app, AlarmReceiver::class.java)
 
     private val _timeSelection = MutableLiveData<Int>()

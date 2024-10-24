@@ -21,7 +21,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdk 34
     defaultConfig {
-        applicationId "com.example.android.eggtimernotifications"
+        applicationId "dev.davidgaspar.eggtimernotifications"
         multiDexEnabled true
         minSdkVersion 21
         targetSdkVersion 32
@@ -41,7 +41,7 @@ android {
         dataBinding true
     }
 
-    namespace = "com.example.android.eggtimernotifications"
+    namespace = "dev.davidgaspar.eggtimernotifications"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17

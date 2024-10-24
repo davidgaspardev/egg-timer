@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.eggtimernotifications.ui
+package dev.davidgaspar.eggtimernotifications.ui
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -28,8 +28,8 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.android.eggtimernotifications.R
-import com.example.android.eggtimernotifications.databinding.FragmentEggTimerBinding
+import dev.davidgaspar.eggtimernotifications.R
+import dev.davidgaspar.eggtimernotifications.databinding.FragmentEggTimerBinding
 import com.google.firebase.messaging.FirebaseMessaging
 
 class EggTimerFragment : Fragment() {

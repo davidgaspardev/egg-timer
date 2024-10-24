@@ -16,7 +16,7 @@
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.android.eggtimernotifications">
+          package="dev.davidgaspar.eggtimernotifications">
 
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 

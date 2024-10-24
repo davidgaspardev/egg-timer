@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.eggtimernotifications.util
+package dev.davidgaspar.eggtimernotifications.util
 
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -23,9 +23,9 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.core.app.NotificationCompat
-import com.example.android.eggtimernotifications.MainActivity
-import com.example.android.eggtimernotifications.R
-import com.example.android.eggtimernotifications.receiver.SnoozeReceiver
+import dev.davidgaspar.eggtimernotifications.MainActivity
+import dev.davidgaspar.eggtimernotifications.R
+import dev.davidgaspar.eggtimernotifications.receiver.SnoozeReceiver
 
 // Notification ID.
 private val NOTIFICATION_ID = 0
