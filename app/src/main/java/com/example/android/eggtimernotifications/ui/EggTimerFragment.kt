@@ -71,6 +71,7 @@ class EggTimerFragment : Fragment() {
             notificationChannel.lightColor = Color.RED
             notificationChannel.enableVibration(true)
             notificationChannel.description = "Time for breakfast"
+            notificationChannel.setShowBadge(false)
 
             val notificationManager = requireActivity().getSystemService(
                 NotificationManager::class.java
