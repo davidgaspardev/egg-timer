@@ -52,7 +52,7 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
         applicationContext,
         REQUEST_CODE,
         snoozeIntent,
-        FLAGS
+        FLAGS or PendingIntent.FLAG_IMMUTABLE
     )
 
     val eggImage = BitmapFactory.decodeResource(
